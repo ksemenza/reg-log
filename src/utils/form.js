@@ -16,6 +16,11 @@ const validationSchema = Yup.object().shape({
     acceptTerms: Yup.bool().oneOf([true], 'Accept Terms is required')
 })
 
+//ON SUBMIT
+const onSubmit = data => {
+    console.log(JSON.stringify(data, null, 2));
+}
+
 
     return(
         <div>
