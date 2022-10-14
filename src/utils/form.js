@@ -38,10 +38,10 @@ const onSubmit = data => {
 
     return(
         <div className="register-form">
-/** Start of Form */
-
+//* Start of FORM
             <form onSubmit={handleSubmit(onSubmit)}>
                 // eslint-disable-next-line react/jsx-no-comment-textnodes
+//* Start FNAME Form Group
                 <div className="form-group">
 /**FNAME LABEL */
                     <label for="fname">First Name</label>
@@ -50,10 +50,96 @@ const onSubmit = data => {
                     className={`form-control ${error.fname ? 'is-invalid' : ''}`}
                     // eslint-disable-next-line react/jsx-no-comment-textnodes
                     />
-/**FNAME Error feedback */ 
+/**FNAME Error feedback*/ 
                     <div className='invalid-feedback'>{error.fname.message}</div>
                 </div>
+//* End FNAME Form Group
 
+//* Start LNAME Form Group
+                <div className="form-group">
+/**LNAME LABEL */
+                    <label for="lname">Last Name</label>
+/**LNAME INPUT */
+                    <input name="lname" type="text" placeholder='Last Name' {...register('lname')}
+                    className={`form-control ${error.lname ? 'is-invalid' : ''}`}
+                    // eslint-disable-next-line react/jsx-no-comment-textnodes
+                    />
+/**LNAME Error feedback*/ 
+                    <div className='invalid-feedback'>{error.lname.message}</div>
+                </div>
+//* End LNAME Form Group
+
+//* Start EMAIL Form Group
+                <div className="form-group">
+/**EMAIL LABEL */
+                    <label for="email">Email</label>
+/**EMAIL INPUT */
+                    <input name="email" type="text" placeholder='Email' {...register('email')}
+                    className={`form-control ${error.email ? 'is-invalid' : ''}`}
+                    // eslint-disable-next-line react/jsx-no-comment-textnodes
+                    />
+/**EMAIL Error feedback*/ 
+                    <div className='invalid-feedback'>{error.email.message}</div>
+                </div>
+//* End EMAIL Form Group
+
+//* Start PASSWORD Form Group
+                <div className="form-group">
+/**PASSWORD LABEL */
+                    <label for="password">Password</label>
+/**PASSWORD INPUT */
+                    <input name="password" type="text" placeholder='Password' {...register('password')}
+                    className={`form-control ${error.password ? 'is-invalid' : ''}`}
+                    // eslint-disable-next-line react/jsx-no-comment-textnodes
+                    />
+/**PASSWORD Error feedback*/ 
+                    <div className='invalid-feedback'>{error.password.message}</div>
+                </div>
+//* End PASSWORD Form Group
+
+//* Start CONFIRM PASSWORD Form Group
+                <div className="form-group">
+/**CONFIRM PASSWORD LABEL */
+                    <label for="confirmPassword">Confirm Password</label>
+/**CONFIRM PASSWORD INPUT */
+                    <input name="confirmPassword" type="text" placeholder='Confirm Password' {...register('confirmPassword')}
+                    className={`form-control ${error.confirmPassword ? 'is-invalid' : ''}`}
+                    // eslint-disable-next-line react/jsx-no-comment-textnodes
+                    />
+/**CONFIRM PASSWORD Error feedback*/ 
+                    <div className='invalid-feedback'>{error.confirmPassword.message}</div>
+                </div>
+//* End CONFIRM PASSWORD Form Group
+
+//*TODO Update comments and framing for deconstruction formatting
+
+<div className="form-group form-check">
+          <input
+            name="acceptTerms"
+            type="checkbox"
+            {...register('acceptTerms')}
+            className={`form-check-input ${
+              error.acceptTerms ? 'is-invalid' : ''
+            }`}
+          />
+          <label htmlFor="acceptTerms" className="form-check-label">
+            I have read and agree to the Terms
+          </label>
+          <div className="invalid-feedback">{error.acceptTerms?.message}</div>
+        </div>
+
+        <div className="form-group">
+          <button type="submit" className="btn btn-primary">
+            Register
+          </button>
+          <button
+            type="button"
+            onClick={reset}
+            className="btn btn-warning float-right"
+          >
+            Reset
+          </button>
+        </div>
 
             </form>
             
